@@ -1,3 +1,4 @@
+
 import React, { Component } from "react";
 import {
     View,
@@ -10,43 +11,30 @@ import {
     ImageBackground,
     Image
 } from "react-native";
+import Confetti from 'react-native-magic-confetti';
 
 
+export default class ThankyouScreen extends Component {
 
-export default class HomeScreen extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-
-        };
-    }
 
     render() {
         return (
             <View style={styles.container}>
                 <SafeAreaView style={styles.droidSafeArea} />
                 <ImageBackground source={require('../assets/menstrual.jpeg')} style={styles.backgroundImage}>
-              
+                <Confetti confettiImages={[require('../assets/confetti.png')]}></Confetti>
                     <View style={styles.titleBar}>
-                        <Text style={styles.titleText}>Pad Zone</Text>
+                        <Text style={styles.titleText}>Thank You</Text>
                     </View>
                     <TouchableOpacity style={styles.routeCard} onPress={() =>
-                        this.props.navigation.navigate("Donor")
+                        this.props.navigation.navigate("Home")
                     }>
-                        <Text style={styles.routeText}>Provide Help</Text>
-                        <Text style={styles.knowMore}>{"Donor"}</Text>
-                        <Text style={styles.bgDigit}>1</Text>
-                        <Image source={require("../assets/donate.png")} style={styles.iconImage}></Image>
+                        <Text style={styles.routeText}>The Team will Contact you</Text>
+                        <Text style={styles.knowMore}>{"Pad Zone"}</Text>
+                        
+                        <Image source={require("../assets/home.png")} style={styles.iconImage}></Image>
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.routeCard} onPress={() =>
-                        this.props.navigation.navigate("Donee")
-                    }>
-                        <Text style={styles.routeText}>Seek Help</Text>
-                        <Text style={styles.knowMore}>{"Donee"}</Text>
-                        <Text style={styles.bgDigit}>2</Text>
-                        <Image source={require("../assets/receive.png")} style={styles.iconImage}></Image>
-                    </TouchableOpacity>
-                </ImageBackground>
+                    </ImageBackground>
             </View>
         );
     }
@@ -64,7 +52,7 @@ const styles = StyleSheet.create({
         resizeMode: 'cover',
     },
     routeCard: {
-        flex: 0.25,
+        flex: 0.5,
         marginLeft: 50,
         marginRight: 50,
         marginTop: 50,
@@ -82,7 +70,7 @@ const styles = StyleSheet.create({
         color: "white"
     },
     routeText: {
-        fontSize: 35,
+        fontSize: 25,
         fontWeight: "bold",
         color: "black",
         marginTop: 75,

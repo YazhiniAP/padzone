@@ -45,7 +45,7 @@ return(<View style={styles.container}>
               />
 			  <TouchableOpacity      style={[styles.routeCard,styles.routeButton]}
               onPress={() =>
-                this.props.navigation.navigate("Home")}>
+                this.props.navigation.navigate("Thankyou")}>
               <Image source={require("../assets/receive.png")} style={styles.iconImage}></Image>
 			  </TouchableOpacity>
 			  </View>
